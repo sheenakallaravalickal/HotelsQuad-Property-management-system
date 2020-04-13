@@ -1,0 +1,115 @@
+.dropdownWrapper {
+    position: relative;
+
+    button {
+        text-transform: capitalize;
+        width: 100%;
+        height: 40px;
+        justify-content: space-between;
+        padding: 0px 15px;
+
+        span {
+            color: #fff !important;
+        }
+    }
+
+    .dropdown {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #fff;
+        box-shadow: 0 10px 40px 0 rgba(62, 57, 107, 0.07), 0 2px 9px 0 rgba(62, 57, 107, 0.06);
+        padding: 15px;
+        width: 100%;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .4s ease;
+        z-index: 999;
+
+        li {
+            line-height: 26px;
+        }
+
+        &.left {
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        &.right {
+            transform: scaleX(0);
+            transform-origin: right;
+        }
+
+        &.top {
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+
+        &.bottom {
+            transform: scaleY(0);
+            transform-origin: bottom;
+        }
+    }
+
+    .dropdownItem {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #fff;
+        box-shadow: 0 10px 40px 0 rgba(62, 57, 107, 0.07), 0 2px 9px 0 rgba(62, 57, 107, 0.06);
+        padding: 15px;
+        width: 100%;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    &.hover {
+        &:hover {
+            .dropdown {
+                visibility: visible;
+                opacity: 1;
+
+                &.left {
+                    transform: scaleX(1);
+                }
+
+                &.right {
+                    transform: scaleX(1);
+                }
+
+                &.top {
+                    transform: scaleY(1);
+                }
+
+                &.bottom {
+                    transform: scaleY(1);
+                }
+            }
+        }
+    }
+
+    &.active {
+        .dropdown {
+            visibility: visible;
+            opacity: 1;
+
+            &.left {
+                transform: scaleX(1);
+            }
+
+            &.right {
+                transform: scaleX(1);
+            }
+
+            &.top {
+                transform: scaleY(1);
+            }
+
+            &.bottom {
+                transform: scaleY(1);
+            }
+        }
+    }
+}

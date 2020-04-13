@@ -1,0 +1,273 @@
+@import '../../../docs/css/mixin.scss';
+
+.PublicRoute {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 0;
+}
+
+.accountArea {
+    width: 100%;
+
+    @media (max-width:991px) {
+        padding: 0px 16px;
+    }
+}
+
+.accountWrapper {
+    width: 1170px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    margin: auto;
+    box-shadow: 0px 14px 60px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    overflow: hidden;
+
+    @media (max-width:1279px) {
+        width: 900px;
+    }
+
+    @media (max-width:991px) {
+        width: 100%;
+    }
+
+
+}
+
+.accountInfo {
+    width: 50%;
+    background: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px;
+    text-align: center;
+    padding: 50px;
+
+    @media (max-width:991px) {
+        width: 100%;
+    }
+
+    @media (max-width:767px) {
+        padding: 40px 30px;
+
+        img {
+            max-width: 700px;
+            max-height: 850px;
+        }
+    }
+
+    .accountBtn {
+        height: 40px;
+        background: #fff;
+        padding: 0px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: capitalize;
+        font-size: 14px;
+        color: $baseColor;
+        border: 2px solid #fff;
+        transition: all .4s ease-in-out 0s;
+
+        &:hover {
+            background: transparent;
+            color: #fff;
+        }
+    }
+
+    p {
+        color: #68696E;
+        font-size: 18px;
+        margin-top: 20px;
+
+        @media (max-width:767px) {
+            font-size: 14px;
+        }
+    }
+}
+
+.accountInfoHeader {
+    margin-bottom: 40px;
+
+    a {
+        display: inline-block;
+
+        img {
+            @media (max-width:967px) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+.accountArea {
+    .image{
+        img{
+            max-width:600px;
+            max-height: 550px;
+        }
+    }
+}
+
+.fromTitle {
+    text-align: center;
+    h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+}
+
+.accountForm {
+    width: 50%;
+    padding: 70px 85px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width:991px) {
+        width: 100%;
+    }
+
+    @media (max-width:767px) {
+        padding: 50px 30px;
+    }
+
+    .formInput {
+        margin-bottom: 30px;
+
+        .MuiInputBase-formControl {
+            fieldset {
+                border: 1px solid #e5e5e5 !important;
+            }
+
+            &.Mui-focused {
+                fieldset {
+                    border: 1px solid $baseColor !important;
+                }
+            }
+        }
+
+        .showPassword {
+            cursor: pointer;
+        }
+    }
+
+    .loginAction {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+
+        .remambar {
+            margin-right: 0;
+        }
+
+        a {
+            display: inline-block;
+            font-size: 14px;
+            color: $baseColor;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+    .accountBtn {
+        font-size: 16px;
+        padding: 10px 20px;
+        border: 2px solid $baseColor;
+
+        &:hover {
+            color: $baseColor;
+            background: transparent !important;
+        }
+    }
+}
+
+.or {
+    border-top: 1px solid #3c54db;
+    margin-top: 45px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    span {
+        font-size: 16px;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 0 25px;
+        background: #fff;
+        position: relative;
+        top: -14px;
+        color: $baseColor;
+    }
+}
+
+.socialLoginBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+
+    li {
+        margin: 0px 5px 5px;
+
+        button {
+            height: 30px;
+            min-width: 92px;
+            font-size: 15px;
+            border-radius: 3px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            border: none;
+            text-transform: capitalize;
+            font-weight: 400;
+            color: #fff;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.facebook {
+                background: #3b5998;
+            }
+
+            &.twitter {
+                background: #55acee;
+            }
+
+            &.linkedin {
+                background: #0077B5;
+            }
+        }
+    }
+}
+
+.subText {
+    text-align: center;
+
+    a {
+        display: inline-block;
+        font-size: 14px;
+        color: $baseColor;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+}

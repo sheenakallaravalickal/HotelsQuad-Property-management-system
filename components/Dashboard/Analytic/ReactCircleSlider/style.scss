@@ -1,0 +1,26 @@
+.reactCircleSlider {
+    display: flex;
+    align-items: center;
+
+    .rcsText {
+        margin-left: 25px;
+        h4 {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.1px;
+            color: #111026;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 0.1px;
+            color: #878AA0;
+        }
+    }
+}

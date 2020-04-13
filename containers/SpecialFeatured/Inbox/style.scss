@@ -1,0 +1,404 @@
+@import '../../../../docs/css/mixin.scss';
+
+.inboxWrapper {
+    background: #fff;
+    min-height: 980px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 4px;
+
+    .inboxNavigationWrap {
+        width: 18%;
+        border-right: 1px solid #EAEAF5;
+
+        @media (max-width:1600px) {
+            width: 40%;
+        }
+
+        @media (max-width:767px) {
+            width: 100%;
+        }
+    }
+
+    .inboxItemWrap {
+        width: 22%;
+        border-right: 1px solid #EAEAF5;
+
+        @media (max-width:1600px) {
+            width: 60%;
+            border: none;
+            padding-right: 15px;
+        }
+
+        @media (max-width:767px) {
+            width: 100%;
+        }
+    }
+
+    .inboxDetailsWrap {
+        width: 60%;
+
+        @media (max-width:1600px) {
+            width: 100%;
+        }
+    }
+}
+
+.composeBtn {
+    min-height: 100px;
+    border-bottom: 1px solid #EAEAF5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 25px;
+
+    button {
+        height: 55px;
+        width: 100%;
+        background: $baseColor;
+        text-transform: capitalize;
+        font-weight: 500;
+        color: #fff;
+        font-size: 16px;
+        border: 2px solid $baseColor;
+        border-radius: 6px;
+
+        &:hover {
+            background: transparent;
+            color: $baseColor;
+        }
+
+        svg {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.inboxTabWrapper {
+    .inboxTabContainer {
+        .inboxTabItem {
+            max-width: 100%;
+            opacity: 1;
+            min-height: 60px;
+            padding: 10px 25px;
+
+            span {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                text-transform: capitalize;
+                font-weight: 500;
+                font-size: 14px;
+
+                &.inboxThumbImg {
+                    margin-bottom: 0;
+                    margin-right: 15px;
+                }
+            }
+
+            &[aria-selected="true"] {
+                background: #F8FAFB;
+                color: $baseColor;
+            }
+        }
+    }
+
+    .inboxIndicator {
+        display: none;
+    }
+}
+
+.devaider {
+    margin: 30px 0px;
+    border-bottom: 1px solid #EAEAF5;
+}
+
+.searchMessage {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #EAEAF5;
+    padding: 20px 25px;
+    flex-wrap: wrap;
+
+    .MuiInput-root {
+        input {
+            height: 50px;
+            padding: 0;
+            padding-left: 15px;
+        }
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.inboxItemMessageWrap {
+    .inboxItemMessageItem {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 110px;
+        padding: 20px;
+        border-bottom: 1px solid #EAEAF5;
+        transition: all .4s ease-in-out 0s;
+        cursor: pointer;
+
+        @media (max-width:1700px) {
+            display: block;
+        }
+
+        &:hover,
+        &.active {
+            background: #fafafa;
+        }
+
+        .inboxMessagecontent {
+            width: calc(100% - 50px);
+            padding: 0px 20px;
+
+            @media (max-width:1700px) {
+                width: 100%;
+                padding: 0px;
+                margin-top: 15px;
+            }
+
+            h4 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 600;
+                line-height: 16px;
+                font-size: 14px;
+                margin-bottom: 5px;
+
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            h3 {
+                font-size: 14px;
+                margin-bottom: 5px;
+                line-height: 24px;
+                text-transform: capitalize;
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.inboxScrollBar {
+    height: 880px;
+}
+
+.emailNotFoundWrap {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+
+    @media (max-width:1600px) {
+        width: 60%;
+        padding: 35px;
+    }
+
+    @media (max-width:767px) {
+        width: 100%;
+    }
+
+    img {
+        margin-bottom: 40px;
+    }
+
+    h3 {
+        text-transform: capitalize;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+.inboxDetailsWrap {
+    padding: 0 35px;
+    position: relative;
+
+    @media (max-width:1600px) {
+        padding: 35px;
+    }
+
+    h2 {
+        font-size: 26px;
+        font-weight: 700;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.inboxMessageImg {
+    width: 50px;
+
+    .nameShort {
+        width: 50px;
+        height: 50px;
+        background: $baseColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 800;
+        color: #fff;
+        border-radius: 50%;
+        border: 2px solid #bfdcff;
+        letter-spacing: 2px;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+.inboxHeadLeft {
+    display: flex;
+    align-items: center;
+
+    @media (max-width:767px) {
+        display: block;
+    }
+}
+
+.heraderLeftContent {
+    margin-left: 15px;
+
+    @media (max-width:767px) {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    h3 {
+        font-size: 16px;
+
+        span {
+            font-size: 14px;
+            font-weight: 400;
+            color: $textColor;
+        }
+    }
+
+    h4 {
+        color: $textColor;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.inboxHeader {
+    display: flex;
+    align-items: center;
+    background: #fafafa;
+    justify-content: space-between;
+    padding: 15px 20px;
+    margin-bottom: 40px;
+
+    @media (max-width:767px) {
+        display: block;
+        margin: -30px;
+        margin-bottom: 40px;
+    }
+}
+
+.inboxHeadRight {
+    display: flex;
+    align-items: center;
+
+    li {
+        margin-right: 16px;
+        cursor: pointer;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.inboxDetailsContent {
+    height: 575px;
+
+    @media (max-width:767px) {
+        height: unset;
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+}
+
+.inboxDetailsInputBox {
+    background: #fafafa;
+    padding: 20px;
+
+    @media (max-width:767px) {
+        margin: -30px;
+        border: 1px solid #ececec;
+        margin-top: 45px;
+    }
+
+    textarea {
+        width: 100%;
+        border: none;
+        background: transparent;
+        margin-bottom: 20px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .inboxDetailsInputIcon {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        li {
+            margin-right: 15px;
+            cursor: pointer;
+
+            button {
+                width: 30px;
+                min-width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: $baseColor;
+            }
+        }
+    }
+}
+
+.emoji-picker {
+    position: absolute;
+    right: 40px;
+    bottom: 85px;
+}
+
+.squareBoxCard {
+    .inboxWrapper {
+        border-radius: 0px;
+    }
+}

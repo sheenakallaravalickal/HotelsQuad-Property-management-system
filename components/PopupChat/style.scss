@@ -1,0 +1,57 @@
+@import '../../../docs/css/mixin.scss';
+
+.rcw-widget-container {
+    margin: 0;
+    right: 10px;
+    bottom: 10px;
+    z-index: 111;
+
+    @media (max-width:800px) {
+        width: 95%;
+    }
+
+    .rcw-launcher {
+        background: $baseColor;
+        cursor: pointer;
+    }
+
+    .rcw-conversation-container {
+        .rcw-conversation-container .rcw-close-button {
+            right: 5px;
+            top: 10px;
+        }
+
+        .rcw-header {
+            background: $baseColor;
+
+            .rcw-title {
+                padding-bottom: 10px;
+                color: #fff;
+                font-weight: 500;
+                text-transform: capitalize;
+
+                @media (max-width:800px) {
+                    font-size: 18px;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+
+        .rcw-response {
+            padding: 10px 15px;
+            border-radius: 3px;
+        }
+
+        .rcw-client {
+            background: rgba(96, 75, 254, .15);
+            padding: 10px 15px;
+            border-radius: 3px;
+        }
+
+        .rcw-sender {
+            padding: 20px;
+            height: unset;
+            min-height: 50px;
+        }
+    }
+}

@@ -1,0 +1,141 @@
+@import '../../../../docs/css/mixin.scss';
+
+.profileInfoWrap {
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 32px;
+    border-radius: 4px;
+
+    .profileInfoImg {
+        margin-bottom: 20px;
+
+        img {
+            width: 150px;
+            border-radius: 50%;
+            border: 5px solid #f1f1f1;
+        }
+    }
+
+    .profileInfoContent {
+        h4 {
+            font-size: 18px;
+            line-height: 18px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+
+            li {
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+
+                    button {
+                        background: $baseColor;
+                    }
+                }
+
+                button,
+                a {
+                    width: 100px;
+                    height: 35px;
+                    background: $baseColor;
+                    text-transform: capitalize;
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.profileTabMenu {
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+    overflow: visible;
+    border-radius: 4px;
+
+    .noScroll {
+        white-space: unset;
+
+        .containerClass {
+            display: block;
+
+            button,
+            a {
+                min-width: 100%;
+                padding: 0px;
+                justify-content: flex-start;
+                min-height: 50px;
+                opacity: 1;
+                text-transform: capitalize;
+                font-size: 15px;
+                color: $textColor;
+
+                span {
+                    justify-content: flex-start;
+                    flex-direction: row;
+
+                    i {
+                        margin-bottom: 0;
+                        width: 30px;
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        border: 1px solid #e5e5e5;
+                        margin-right: 10px;
+                        font-size: 14px;
+                        color: $textColor;
+                    }
+                }
+
+                &[aria-selected="true"] {
+                    span {
+                        color: $baseColor;
+
+                        i {
+                            color: #fff;
+                            background: $baseColor;
+                        }
+                    }
+                }
+
+                &:hover {
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    .noIndicator {
+        display: none;
+    }
+}
+
+.userProfile {
+    span {
+        display: block;
+        margin-bottom: 3px;
+        text-transform: capitalize;
+        font-size: 14px;
+    }
+
+    h4 {
+        margin-bottom: 0;
+        padding: 15px;
+        background: #fafafa;
+    }
+}

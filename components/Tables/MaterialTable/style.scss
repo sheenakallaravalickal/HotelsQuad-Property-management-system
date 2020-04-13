@@ -1,0 +1,24 @@
+.tableWrapper {
+    thead {
+        tr {
+            th {
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &.customizedTables {
+        thead {
+            tr {
+                th {
+                    background: #424c5c;
+                }
+            }
+        }
+    }
+}
+
+.shadownone {
+    box-shadow: none;
+}

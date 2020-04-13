@@ -1,0 +1,255 @@
+@import '../../../docs/css/mixin.scss';
+
+.sidebarMainWrapper {
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+    position: relative;
+    background: #FFFFFF;
+
+    .colupsMenuSidebar {
+        display: none;
+
+        @media (max-width:991px) {
+            display: flex;
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 0px;
+            top: 0;
+            z-index: 111;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width:1440px) {
+        width: 230px;
+        min-width: 230px;
+        max-width: 230px;
+    }
+
+    @media (max-width:991px) {
+        position: fixed;
+        z-index: 111;
+        left: 0;
+        background: #EAE8F7;
+        height: 100%;
+        width: 230px;
+        min-width: 230px;
+        max-width: 230px;
+        left: -230px;
+        transition: all .4s ease-in-out 0s;
+    }
+
+    .sidebarWrap {
+        position: fixed;
+        width: 320px;
+        min-width: 320px;
+        max-width: 320px;
+
+        @media (max-width:1440px) {
+            width: 230px;
+            min-width: 230px;
+            max-width: 230px;
+        }
+
+    }
+
+}
+
+.logo {
+    padding: 30px;
+
+    @media (max-width:1279px) {
+        padding: 30px 20px;
+    }
+
+    a {
+        display: inline-block;
+        height: 45px;
+
+        img {
+            position: absolute;
+
+
+            &.colupsLogo {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.sidebarMenu {
+    height: calc(100vh - 112px);
+    background: #ffffff;
+
+    .menuLabel {
+        display: block;
+        font-size: 18px;
+        color: $headingColor;
+        margin-bottom: 20px;
+        font-weight: 500;
+        padding: 0px 40px;
+
+        @media (max-width:1279px) {
+            font-size: 16px;
+            padding: 0px 20px;
+        }
+    }
+
+    .navItems {
+        min-height: 45px;
+        width: 100%;
+        box-shadow: none;
+        background: transparent;
+        padding-right: 20px;
+
+        &::before {
+            display: none;
+        }
+
+        .navItemsText {
+            padding: 0;
+            min-height: 50px;
+
+            .navItemsTextContent {
+                font-style: normal;
+                font-weight: bold;
+                padding-left: 30px;
+                margin: 20px 0;
+
+                span {
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #111026;
+                }
+
+                .icon {
+                    width: 18px;
+                    display: block;
+                    position: relative;
+                    margin-right: 10px;
+
+                    img {
+                        position: absolute;
+                        max-width: 100%;
+
+                        &.hover {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+
+            .navItemsTextIcon {
+                span {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .navItemsTextExpanded {
+            padding: 0;
+            margin: 0;
+        }
+
+        &.navItemsExpanded {
+            margin: 0 !important;
+        }
+
+        .submenu {
+            li {
+                a.navItem {
+                    display: block;
+                    font-family: Lato;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #878AA0;
+                    padding: 15px 0;
+                    padding-left: 58px;
+                    border-right: 5px solid transparent;
+
+                    position: relative;
+                    z-index: 1;
+
+                    &:hover {
+                        color: #3B53DB;
+                    }
+
+                    &.active {
+                        border-color: #3B53DB;
+                        color: #3B53DB;
+                        background: rgba(59, 83, 219, 0.1);
+                    }
+
+                    .value {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: #fff;
+                        height: 20px;
+                        min-width: 35px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 20px;
+                    }
+                }
+
+                .navItems {
+                    padding-left: 28px;
+                    padding-right: 0;
+                    min-height: unset;
+                    margin-bottom: 15px;
+
+                    .navItemsText {
+                        min-height: unset;
+                    }
+
+                    .navItemsTextContent {
+                        margin: 0;
+                    }
+
+                    .navItemsTextIcon {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+
+            .thirdmenuItems {
+                li {
+                    a {
+                        display: block;
+                        font-family: Lato;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #878AA0;
+                        padding: 8px 0;
+                        padding-left: 40px;
+                        border-right: 5px solid transparent;
+
+                        &:hover {
+                            color: #3B53DB;
+                        }
+
+                        &.active {
+                            border-color: #3B53DB;
+                            color: #3B53DB;
+                            background: rgba(59, 83, 219, 0.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

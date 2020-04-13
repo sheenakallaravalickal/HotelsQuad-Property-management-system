@@ -1,0 +1,23 @@
+.textEditor {
+    .demoWrapper {
+        .rdw-editor-toolbar {
+            margin-bottom: 0;
+            padding: 15px;
+
+            div {
+                margin-bottom: 0;
+                font-size: 14px;
+            }
+        }
+
+        .demoEditor {
+            background: #fff;
+            height: 200px;
+            padding: 20px;
+        }
+    }
+
+    .dnone {
+        display: none;
+    }
+}

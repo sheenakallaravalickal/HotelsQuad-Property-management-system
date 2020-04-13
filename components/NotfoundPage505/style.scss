@@ -1,0 +1,39 @@
+.notfoundArea {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0px 16px;
+    width: 100%;
+
+    h2 {
+        font-size: 250px;
+        font-weight: 700;
+        line-height: 200px;
+        margin-bottom: 20px;
+
+        @media (max-width:767px) {
+            font-size: 150px;
+            line-height: 140px;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 30px;
+
+        @media (max-width:767px) {
+            font-size: 16px;
+        }
+
+        span {
+            display: block;
+
+            @media (max-width:450px) {
+                display: inline-block;
+            }
+
+        }
+    }
+}

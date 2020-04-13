@@ -1,0 +1,47 @@
+.fileUpload {
+    .dzu-dropzone {
+        overflow: hidden;
+        background: #fafafa;
+        border: 1px solid #f1f1f1;
+
+        .dzu-inputLabel {
+            font-size: 14px;
+            color: #8f8f8f;
+            text-transform: capitalize;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 500;
+        }
+
+        .dzu-previewContainer {
+            padding: 30px 25px;
+
+            img {
+                max-height: unset;
+            }
+
+            .dzu-previewStatusContainer {}
+        }
+
+        .dzu-inputLabelWithFiles {
+            border: none;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 400;
+            background: linear-gradient(to right, #ff5e62, #ff9966) !important;
+        }
+
+        .dzu-submitButtonContainer {
+            button {
+                background: #28a745 !important;
+                border: none;
+                font-size: 14px;
+                font-weight: 400;
+                color: #fff;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}

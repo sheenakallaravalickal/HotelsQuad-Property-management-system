@@ -1,0 +1,34 @@
+.textEditor {
+    .demoWrapper {
+        .rdw-editor-toolbar {
+            margin-bottom: 0;
+            padding: 15px;
+            background: #fafafa;
+            border-bottom: none;
+        }
+
+        .demoEditor {
+            background: #fff;
+            height: 150px;
+            padding: 20px;
+            border: 1px solid #EAEAF5;
+        }
+
+        .public-DraftStyleDefault-block {
+            margin: 0;
+        }
+
+        .rdw-link-modal {
+            min-height: 205px;
+            height: unset;
+        }
+    }
+
+    .viweText {
+        width: 100%;
+        background: #fafafa;
+        height: 150px;
+        margin-top: 30px;
+        border: 1px solid #EAEAF5;
+    }
+}

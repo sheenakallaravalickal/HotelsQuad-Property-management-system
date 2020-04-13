@@ -1,0 +1,49 @@
+.analyticFeaturedWrap {
+  background: #ffffff;
+  min-height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-radius: 9px;
+  padding: 25px 30px;
+  transition: all 0.4s ease-in-out 0s;
+
+  .analyticFeaturedContent {
+    p {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1px;
+      color: #878aa0;
+      margin-bottom: 20px;
+      @media (max-width: 767px) {
+        margin-bottom: 12px;
+      }
+    }
+
+    h3 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 34px;
+      letter-spacing: 0.116667px;
+      color: #111026;
+      @media (min-width: 992px) and (max-width: 1200px) {
+        font-size: 24px;
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 22px;
+      }
+      @media (max-width: 767px) {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.squareBoxCard {
+  .analyticFeaturedWrap {
+    border-radius: 0px;
+  }
+}

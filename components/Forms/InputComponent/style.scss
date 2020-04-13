@@ -1,0 +1,11 @@
+.inputField {
+    label {
+        text-transform: capitalize;
+    }
+
+    &.inputFieldFilled {
+        div {
+            background: #fafafa;
+        }
+    }
+}

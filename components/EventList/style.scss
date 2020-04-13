@@ -1,0 +1,100 @@
+.gestWrap {
+    padding: 0;
+
+    li {
+        display: inline-block;
+        width: unset;
+        padding: 0;
+        position: relative;
+        margin: 1px;
+
+        .gestInfo {
+            position: absolute;
+            left: 7px;
+            width: 200px;
+            background: #fff;
+            padding: 10px;
+            top: -110px;
+            box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+            visibility: hidden;
+            opacity: 0;
+            transform: scaleY(0) translateX(-50%);
+            transform-origin: bottom;
+            transition: all .3s;
+            z-index: 99;
+
+            h5 {
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            h6 {
+                font-size: 15px;
+                text-transform: capitalize;
+            }
+
+            span {
+                font-size: 13px;
+            }
+
+            &::before {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -10px;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid #fff;
+                content: "";
+            }
+        }
+
+        &:hover {
+            .gestInfo {
+                visibility: visible;
+                opacity: 1;
+                transform: scaleY(1) translateX(-50%);
+            }
+
+            img {
+                position: relative;
+                z-index: 9;
+                transform: scale(1.1)
+            }
+        }
+
+        img {
+            height: 35px;
+            border-radius: 50%;
+            margin-left: -10px;
+            cursor: pointer;
+            transition: all .3s;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+.badge-corporate {
+    background: #FFE2E6;
+    color: #FF7285;
+}
+
+.badge-marketing {
+    background: #FFF4E5;
+    color: #FFB95B;
+}
+
+.badge-client {
+    background: #bfd9f1;
+    color: #2196f3;
+}
+
+.badge-others {
+    background: #DAF7E8;
+    color: #4AD991;
+}
+
+.badge-toure {
+    background: #E8E7FF;
+    color: #8280FF;}

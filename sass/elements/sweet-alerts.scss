@@ -1,0 +1,74 @@
+.sweetAlertWrapper {
+    &.sweetAlertSuccess {
+        .sa-button-container {
+            button {
+                &.confirm {
+                    background: #28a745 !important;
+                }
+            }
+        }
+    }
+
+    &.sweetAlertWarning {
+        .sa-button-container {
+            button {
+                &.confirm {
+                    background: #ffc107 !important;
+                }
+            }
+        }
+    }
+
+    &.sweetAlertError {
+        .sa-button-container {
+            button {
+                &.confirm {
+                    background: #dc3545 !important;
+                }
+            }
+        }
+    }
+
+    &.sweetAlertInfo {
+        .sa-button-container {
+            button {
+                &.confirm {
+                    background: #17a2b8 !important;
+                }
+            }
+        }
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    .sa-button-container {
+        button {
+            opacity: 1;
+
+            &.confirm {
+                background: #0071F5 !important;
+                box-shadow: none;
+                text-transform: capitalize;
+            }
+
+            &.cancel {}
+        }
+    }
+
+}
+
+.alertBtn {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        margin-right: 16px;
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

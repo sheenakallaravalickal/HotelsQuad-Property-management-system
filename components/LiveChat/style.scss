@@ -1,0 +1,123 @@
+@import '../../../docs/css/mixin.scss';
+
+.chatInputBox {
+    padding: 0px 30px;
+    position: relative;
+
+    input {
+        width: 100%;
+        height: 50px;
+        border: none;
+        border: 1px solid #fafafa;
+        padding: 0px 20px;
+        border-radius: 50px;
+        background: #fafafa;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .chatAppConvButton {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 100%;
+        background: transparent;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        img {
+            height: 20px;
+        }
+    }
+}
+
+
+
+.chatAppConvTimeline {
+    padding: 50px 30px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+
+    .chatAppConvMessageItem {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 15px;
+        width: 100%;
+
+        &.chatAppConvMessageItemLeft {
+            justify-content: flex-start;
+
+            .chatAppConvMessageValue {
+                background: $baseColor;
+                color: #fff;
+            }
+        }
+
+        &.chatAppConvMessageItemRight {
+            justify-content: flex-end;
+
+            .chatAppConvMessageAvatar {
+                order: 1;
+            }
+
+            .chatAppConvMessageValue {
+                order: 0;
+                margin-left: 0;
+                margin-right: 15px;
+
+                &::before {
+                    border-bottom: 15px solid #F0F0F9;
+                    border-right: 10px solid transparent;
+                    border-left: none;
+                    left: auto;
+                    right: -10px;
+                }
+            }
+        }
+
+        .chatAppConvMessageAvatar {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .chatAppConvMessageValue {
+            display: inline-block;
+            background: #F0F0F9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-left: 15px;
+            position: relative;
+            max-width: 450px;
+            font-size: 14px;
+            line-height: 24px;
+
+            &::before {
+                position: absolute;
+                left: -10px;
+                bottom: 5px;
+                border-bottom: 15px solid $baseColor;
+                border-left: 10px solid transparent;
+                content: "";
+            }
+        }
+    }
+}
+
+.messageListScroll {
+    height: 775px;
+}
+
+.chatScrollBar {
+    height: 760px;
+}

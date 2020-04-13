@@ -1,0 +1,19 @@
+.editProfile{
+    label{
+        display: block;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+        font-size: 12px;
+    }
+    .textField{
+        background: #fafafa;
+        fieldset{
+            border: 1px solid #f1f1f1;
+        }
+        &:hover{
+            fieldset{
+                border-color:#e5e5e5;
+            }
+        }
+    }
+}

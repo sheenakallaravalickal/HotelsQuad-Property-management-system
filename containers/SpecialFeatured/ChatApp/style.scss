@@ -1,0 +1,122 @@
+@import '../../../../docs/css/mixin.scss';
+
+.chatApp {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 14px 60px rgba(0, 0, 0, 0.06);
+
+    .chatAppLeft {
+        width: 300px;
+
+        @media (max-width:767px) {
+            width: 100%;
+        }
+
+        .searchContact {
+            background: #ebedfb;
+
+            div {
+                min-height: 70px;
+
+                &::before,
+                &::after {
+                    display: none;
+                }
+
+                input {
+                    padding: 0 20px;
+
+                    &::placeholder {
+                        opacity: 1;
+
+                    }
+                }
+            }
+
+            .searchContactIcon {
+                width: 70px;
+                margin-left: 0;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+
+        .chatScrollBar {
+            height: 840px;
+
+            .chatScrollBarContent {
+                .chatTabWrapper {
+                    .chatTabContainer {
+                        .chatTabItem {
+                            max-width: 100%;
+                            opacity: 1;
+                            padding: 10px 15px;
+                            border: 1px solid rgba(152, 166, 173, 0.07);
+                            margin-top: -1px;
+                            text-align: left;
+
+                            &[aria-selected="true"] {
+                                background: #ebedfb;
+                                color: $baseColor;
+                            }
+
+                            span {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-start;
+                                text-transform: capitalize;
+                                font-weight: 400;
+                                font-size: 14px;
+
+                                &.chatThumbImg {
+                                    margin-bottom: 0;
+                                    margin-right: 15px;
+
+                                    img {
+                                        width: 50px;
+                                        height: 50px;
+                                        border-radius: 50%;
+                                        object-fit: cover;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .chatIndicator {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .chatAppRight {
+        width: calc(100% - 300px);
+        padding-bottom: 30px;
+
+        @media (max-width:767px) {
+            width: 100%;
+        }
+    }
+
+}
+
+.chatAppHead {
+    min-height: 71px;
+    background: #ebedfb;
+    border-left: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+
+    @media (max-width:767px) {
+        border-left: none;
+    }
+
+    h3 {
+        text-transform: capitalize;
+    }
+}

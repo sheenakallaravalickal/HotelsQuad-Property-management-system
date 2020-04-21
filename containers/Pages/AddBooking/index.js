@@ -5,7 +5,6 @@ import {
   KeyboardTimePicker,
 } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
-
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
@@ -18,6 +17,7 @@ import {
   Radio,
 } from '@material-ui/core';
 import Card from 'components/Card/Loadable';
+import firebase from './firebase';
 
 const useStyles = makeStyles(() => ({
   menu: {
@@ -50,29 +50,64 @@ const rooms = [
 
 const AddBooking = () => {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    name: 'Cat in the Hat',
-    guest: '',
-    multiline: 'Controlled',
-    room: 'Double',
-  });
+  const [values, setValues] = React.useState('');
 
-  const [selectedValue, setSelectedValue] = React.useState('female');
+  const [selectedValue, setSelectedValue] = React.useState('');
+  const [statusValue, setStatusValue] = React.useState('');
 
   function radioChangeHandler(event) {
     setSelectedValue(event.target.value);
+  }
+
+  function radioChange2Handler(event) {
+    setStatusValue(event.target.value);
   }
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
   };
   const [selectedDate, handleDateChange] = useState(new Date());
-
   const [selectedDate2, handleDate2Change] = useState(new Date());
-
   const [selectedTime, handleTimeChange] = useState(new Date());
-
   const [selectedTime2, handleTime2Change] = useState(new Date());
+
+  const [bkId, setBkId] = useState('');
+  const [fname, setFname] = useState('');
+  const [lname, setLname] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhn] = useState('');
+  const [guestno, setGuest] = useState('');
+
+  function onSubmit(e) {
+    e.preventDefault();
+
+    firebase
+      .firestore()
+      .collection('AddBooking')
+      .add({
+        bkId,
+        fname,
+        lname,
+        email,
+        phone,
+        guestno,
+        selectedValue,
+        values,
+        statusValue,
+      })
+
+      .then(() => {
+        setBkId('');
+        setFname('');
+        setLname('');
+        setEmail('');
+        setPhn('');
+        setGuest('');
+        setSelectedValue('');
+        setValues('');
+        setStatusValue('');
+      });
+  }
 
   return (
     <Fragment>
@@ -80,17 +115,19 @@ const AddBooking = () => {
         <title>Add Booking</title>
       </Helmet>
       <Card>
-        <form noValidate>
+        <form onSubmit={onSubmit}>
           <Grid container spacing={3}>
             <Grid item xl={4} md={3} sm={6} xs={12}>
               <TextField
                 required
                 label="Booking ID"
-                //defaultValue="Your ID" 
+                //defaultValue="Your ID"
                 className="inputField"
                 fullWidth
                 variant="outlined"
                 name="bookingId"
+                value={bkId}
+                onChange={e => setBkId(e.currentTarget.value)}
               />
             </Grid>
           </Grid>
@@ -104,6 +141,8 @@ const AddBooking = () => {
                 fullWidth
                 variant="outlined"
                 name="firstName"
+                value={fname}
+                onChange={e => setFname(e.currentTarget.value)}
               />
             </Grid>
             <Grid item xl={6} md={6} sm={12} xs={12}>
@@ -114,63 +153,101 @@ const AddBooking = () => {
                 fullWidth
                 variant="outlined"
                 name="lastName"
+                value={lname}
+                onChange={e => setLname(e.currentTarget.value)}
               />
             </Grid>
 
             <Grid item xs={12}>
               Gender:
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={selectedValue === 'female'}
+                      onChange={radioChangeHandler}
+                      value="female"
+                      name="radio-button-demo"
+                      classes={{
+                        root: 'radioButton defaultRadioButton',
+                        checked: 'radioCheckd',
+                      }}
+                    />
+                  }
+                  label="Female"
+                  labelPlacement="end"
+                />
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={selectedValue === 'male'}
+                      onChange={radioChangeHandler}
+                      value="male"
+                      name="radio-button-demo"
+                      classes={{
+                        root: 'radioButton defaultRadioButton',
+                        checked: 'radioCheckd',
+                      }}
+                    />
+                  }
+                  label="Male"
+                  labelPlacement="end"
+                />
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={selectedValue === 'others'}
+                      onChange={radioChangeHandler}
+                      value="others"
+                      name="radio-button-demo"
+                      classes={{
+                        root: 'radioButton defaultRadioButton',
+                        checked: 'radioCheckd',
+                      }}
+                    />
+                  }
+                  label="Others"
+                  labelPlacement="end"
+                />
+              </Grid>
             </Grid>
             <Grid item xs={12}>
-              <FormControlLabel
-                control={
-                  <Radio
-                    checked={selectedValue === 'female'}
-                    onChange={radioChangeHandler}
-                    value="female"
-                    name="radio-button-demo"
-                    classes={{
-                      root: 'radioButton defaultRadioButton',
-                      checked: 'radioCheckd',
-                    }}
-                  />
-                }
-                label="Female"
-                labelPlacement="end"
-              />
-              <FormControlLabel
-                control={
-                  <Radio
-                    checked={selectedValue === 'male'}
-                    onChange={radioChangeHandler}
-                    value="male"
-                    name="radio-button-demo"
-                    classes={{
-                      root: 'radioButton defaultRadioButton',
-                      checked: 'radioCheckd',
-                    }}
-                  />
-                }
-                label="Male"
-                labelPlacement="end"
-              />
-              <FormControlLabel
-                control={
-                  <Radio
-                    checked={selectedValue === 'others'}
-                    onChange={radioChangeHandler}
-                    value="others"
-                    name="radio-button-demo"
-                    classes={{
-                      root: 'radioButton defaultRadioButton',
-                      checked: 'radioCheckd',
-                    }}
-                  />
-                }
-                label="Others"
-                labelPlacement="end"
-              />
+              Status:
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={statusValue === 'arrived'}
+                      onChange={radioChange2Handler}
+                      value="arrived"
+                      name="radio-button-demo"
+                      classes={{
+                        root: 'radioButton defaultRadioButton',
+                        checked: 'radioCheckd',
+                      }}
+                    />
+                  }
+                  label="arrived"
+                  labelPlacement="end"
+                />
+                <FormControlLabel
+                  control={
+                    <Radio
+                      checked={statusValue === 'pending'}
+                      onChange={radioChange2Handler}
+                      value="pending"
+                      name="radio-button-demo"
+                      classes={{
+                        root: 'radioButton defaultRadioButton',
+                        checked: 'radioCheckd',
+                      }}
+                    />
+                  }
+                  label="pending"
+                  labelPlacement="end"
+                />
+              </Grid>
             </Grid>
-
             <Grid item xl={6} md={6} sm={12} xs={12}>
               <TextField
                 label="Email"
@@ -180,6 +257,8 @@ const AddBooking = () => {
                 autoComplete="email"
                 fullWidth
                 variant="outlined"
+                value={email}
+                onChange={e => setEmail(e.currentTarget.value)}
               />
             </Grid>
             <Grid item xl={6} md={6} sm={12} xs={12}>
@@ -191,6 +270,8 @@ const AddBooking = () => {
                 fullWidth
                 variant="outlined"
                 name="phoneNo"
+                value={phone}
+                onChange={e => setPhn(e.currentTarget.value)}
               />
             </Grid>
             <Grid item xl={6} md={6} sm={12} xs={12}>
@@ -228,6 +309,8 @@ const AddBooking = () => {
                   shrink: true,
                 }}
                 variant="outlined"
+                value={guestno}
+                onChange={e => setGuest(e.currentTarget.value)}
               />
             </Grid>
 
@@ -301,11 +384,12 @@ const AddBooking = () => {
                 />
               </Grid>
             </MuiPickersUtilsProvider>
+                
             <Grid align="center">
               <input className="btn btn-submit bg-success" type="submit" />
             </Grid>
-            <Grid align="center">
-              <input className="btn btn-reset bg-default" type="reset" />
+            <Grid align="center" >
+              <input className="btn btn-reset bg-default" type="reset" justify-content="center"/>
             </Grid>
           </Grid>
         </form>
@@ -313,16 +397,13 @@ const AddBooking = () => {
     </Fragment>
   );
 };
-
 function mapDispatchToProps(dispatch) {
   return {
     dispatch,
   };
 }
-
 const withConnect = connect(
   null,
   mapDispatchToProps,
 );
-
 export default compose(withConnect)(AddBooking);
